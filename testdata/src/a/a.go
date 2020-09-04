@@ -10,9 +10,9 @@ func f2(s []int) {
 	s, _ = append(s, 1), "foo" // want "this assignment is not detected outside of the func"
 }
 
-func f3(s []int) {
-	s = append(s, 1) // want "this assignment is not detected outside of the func"
-	s = append(s, 2) // want "this assignment is not detected outside of the func"
+func f3(s []int, t []string) {
+	s = append(s, 1)     // want "this assignment is not detected outside of the func"
+	t = append(t, "foo") // want "this assignment is not detected outside of the func"
 }
 
 type A struct{}
